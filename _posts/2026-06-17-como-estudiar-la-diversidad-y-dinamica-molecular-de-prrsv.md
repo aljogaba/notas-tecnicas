@@ -10,7 +10,7 @@ tags:
 - producción porcina
 excerpt: Conocer la dinámica molecular de PRRSV requiere una estrategia acorde con la pregunta sanitaria. Se presenta un abordaje escalonado que integra seguimiento longitudinal, detección diferencial de cepas vacunales y secuenciación profunda.
 image: /assets/images/notas/dinamica-molecular-prrsv.jpg
-image_alt: Interior view of a pig farming facility in North Carolina showing pigs in pens.
+image_alt: Interior de una nave porcina con corrales y animales.
 legacy_url: https://episuis.com.mx/como-estudiar-la-diversidad-y-dinamica-molecular-de-prrsv/
 editorial_review: pending
 ---
@@ -21,11 +21,9 @@ Por ejemplo, detectar una secuencia relacionada con una vacuna durante las prime
 
 La profundidad del análisis debe definirse de acuerdo con la pregunta sanitaria. Para ello, puede plantearse un abordaje escalonado.
 
-### Idea central
+> **Idea central.** Para comprender la dinámica molecular de PRRSV no basta con identificar una secuencia aislada en cada momento. Es necesario ampliar el muestreo, conservar la identidad de los animales y elegir una estrategia diagnóstica acorde con el nivel de diversidad que se desea estudiar.
 
-Para comprender la dinámica molecular de PRRSV no basta con identificar una secuencia aislada en cada momento. Es necesario ampliar el muestreo, conservar la identidad de los animales y elegir una estrategia diagnóstica acorde con el nivel de diversidad que se desea estudiar.
-
-### Nivel básico: seguimiento longitudinal
+## Nivel básico: seguimiento longitudinal
 
 El primer nivel consiste en ampliar el número de muestras y conservar la identidad de los animales durante el seguimiento.
 
@@ -40,17 +38,15 @@ Esto permite conocer:
 
 Secuenciar únicamente la muestra con mayor concentración viral facilita la obtención de una secuencia de buena calidad, pero puede no representar la diversidad del grupo.
 
-![Esquema de seguimiento longitudinal para comparar variantes de PRRSV entre animales y momentos]({{ "/assets/images/notas/seguimiento-longitudinal-prrsv.webp" | relative_url }} "seguimiento longitudinal prrsv")
+{% include figure.html
+  src="/assets/images/notas/seguimiento-longitudinal-prrsv.webp"
+  alt="Esquema de seguimiento longitudinal para comparar variantes de PRRSV entre animales y momentos de muestreo."
+  caption="Figura 1. El seguimiento longitudinal de animales identificados permite comparar las variantes predominantes entre individuos y momentos de muestreo, evitando basar la interpretación en una sola secuencia."
+%}
 
-Figura 1. El seguimiento longitudinal de animales identificados permite comparar las variantes predominantes entre individuos y momentos de muestreo, evitando basar la interpretación en una sola secuencia.
+**Pregunta guía:** ¿Qué variantes consenso se detectan en distintos animales y momentos?
 
-#### Pregunta que responde este nivel:
-
-¿Qué variantes consenso se detectan en distintos animales y momentos?
-
----
-
-### Nivel intermedio: detección diferencial de cepas vacunales
+## Nivel intermedio: detección diferencial de cepas vacunales
 
 Cuando existe interés en distinguir las cepas vacunales de otras variantes circulantes, puede utilizarse una batería de RT-qPCR dirigida a regiones específicas de las vacunas empleadas.
 
@@ -70,17 +66,15 @@ Un resultado negativo indica que no se detectó ninguna de las vacunas incluidas
 - baja concentración viral;
 - o diferencias de sensibilidad entre ensayos.
 
-![Esquema de detección diferencial de señales compatibles con cepas vacunales de PRRSV]({{ "/assets/images/notas/deteccion-diferencial-cepas-vacunales-prrsv.webp" | relative_url }} "deteccion diferencial cepas vacunales prrsv 1")
+{% include figure.html
+  src="/assets/images/notas/deteccion-diferencial-cepas-vacunales-prrsv.webp"
+  alt="Esquema de detección diferencial de señales compatibles con cepas vacunales de PRRSV."
+  caption="Figura 2. La RT-qPCR específica permite detectar señales compatibles con las cepas vacunales incluidas en el panel. La secuenciación de ORF5 y el análisis filogenético aportan evidencia adicional para confirmar su relación molecular."
+%}
 
-Figura 2. La RT-qPCR específica permite detectar señales compatibles con las cepas vacunales incluidas en el panel. La secuenciación de ORF5 y el análisis filogenético aportan evidencia adicional para confirmar su relación molecular.
+**Pregunta guía:** ¿La muestra presenta una señal compatible con alguna de las cepas vacunales evaluadas?
 
-#### Pregunta que responde este nivel:
-
-¿La muestra presenta una señal compatible con alguna de las cepas vacunales evaluadas?
-
----
-
-### Nivel ideal: diversidad de cuasiespecies
+## Nivel ideal: diversidad de cuasiespecies
 
 La secuenciación profunda permite estudiar la población viral más allá de una sola secuencia consenso.
 
@@ -98,17 +92,15 @@ Esto permite identificar:
 
 Un análisis de este tipo podría demostrar, por ejemplo, que una variante relacionada con la vacuna domina inicialmente, mientras una variante de campo ya está presente en baja frecuencia. Si posteriormente la variante de campo aumenta, podría estudiarse el cambio en la composición de la población viral con mucha mayor precisión.
 
-![Esquema de diversidad de cuasiespecies de PRRSV mediante secuenciación profunda]({{ "/assets/images/notas/diversidad-cuasiespecies-prrsv.webp" | relative_url }} "diversidad cuasiespecies prrsv")
+{% include figure.html
+  src="/assets/images/notas/diversidad-cuasiespecies-prrsv.webp"
+  alt="Esquema de diversidad de cuasiespecies de PRRSV mediante secuenciación profunda."
+  caption="Figura 3. La secuenciación profunda permite identificar variantes mayoritarias y minoritarias dentro de una misma muestra y evaluar cómo cambia su frecuencia durante el seguimiento longitudinal."
+%}
 
-Figura 3. La secuenciación profunda permite identificar variantes mayoritarias y minoritarias dentro de una misma muestra y evaluar cómo cambia su frecuencia durante el seguimiento longitudinal.
+**Pregunta guía:** ¿Qué variantes coexisten dentro de cada muestra y cómo cambia su frecuencia con el tiempo?
 
-#### Pregunta que responde este nivel:
-
-¿Qué variantes coexisten dentro de cada muestra y cómo cambia su frecuencia con el tiempo?
-
----
-
-### Cada nivel aporta una resolución diferente
+## Cada nivel aporta una resolución diferente
 
 Los tres niveles son complementarios:
 
@@ -118,7 +110,7 @@ Los tres niveles son complementarios:
 
 La metodología debe seleccionarse de acuerdo con la pregunta que se desea responder y con los recursos disponibles.
 
-### Referencias consultadas
+## Referencias consultadas
 
 1. Cheng, T.-Y., Campler, M. R., Schroeder, D. C., Yang, M., Mor, S. K., Ferreira, J. B., & Arruda, A. G. (2022). Detection of Multiple Lineages of PRRSV in Breeding and Growing Swine Farms. *Frontiers in Veterinary Science*, *9*. <https://doi.org/10.3389/fvets.2022.884733>
 2. Clilverd, H., Li, Y., Martín-Valls, G., Aguirre, L., Martín, M., Cortey, M., & Mateu, E. (2024). Selection of viral variants with enhanced transmission and reduced neutralization susceptibility alongside lateral introductions may explain the persistence of porcine reproductive and respiratory syndrome virus in vaccinated breeding herds. *Virus Evolution*, *10* (1), veae041. <https://doi.org/10.1093/ve/veae041>

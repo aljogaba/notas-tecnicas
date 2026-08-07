@@ -13,7 +13,8 @@ layout: default
     <p class="post-deck">{{ page.excerpt }}</p>
     <div class="post-byline">
       <span>{{ site.author }}</span>
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d de %B de %Y" }}</time>
+      <time datetime="{{ page.date | date_to_xmlschema }}">{% include date-es.html date=page.date %}</time>
+      {% if page.updated %}<span>Actualizada: {% include date-es.html date=page.updated %}</span>{% endif %}
       {% assign words = content | number_of_words %}
       {% assign minutes = words | divided_by: 200 | plus: 1 %}
       <span>{{ minutes }} min de lectura</span>
@@ -23,6 +24,7 @@ layout: default
   {% if page.image %}
     <figure class="post-hero">
       <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | escape }}">
+      {% if page.image_caption %}<figcaption>{{ page.image_caption }}</figcaption>{% endif %}
     </figure>
   {% endif %}
 
@@ -30,15 +32,27 @@ layout: default
     {{ content }}
   </div>
 
-  {% if page.tags %}
   <footer class="post-footer">
-    <p class="post-tags-label">Temas relacionados</p>
-    <div class="post-tags">
-      {% for tag in page.tags %}
-        <span>{{ tag }}</span>
-      {% endfor %}
+    {% if page.tags %}
+      <p class="post-tags-label">Temas relacionados</p>
+      <div class="post-tags">
+        {% for tag in page.tags %}
+          <span>{{ tag }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <div class="post-editorial-meta">
+      {% if page.reviewed_on %}
+        <p><strong>Revisión editorial:</strong> {% include date-es.html date=page.reviewed_on %}</p>
+      {% endif %}
+      <p>Esta es una nota técnica de trabajo y divulgación. Cuando corresponde, las fuentes se indican al final y los límites de interpretación se expresan en el propio texto.</p>
     </div>
-    <p class="post-disclaimer">Este texto es una nota técnica de trabajo y divulgación. Cuando corresponde, las fuentes se indican al final de la nota.</p>
+
+    <div class="post-exit-links">
+      <a href="{{ '/' | relative_url }}">Volver al archivo</a>
+      <a href="{{ site.profile_url }}">Perfil profesional</a>
+      <a href="{{ site.episuis_url }}">EPISUIS</a>
+    </div>
   </footer>
-  {% endif %}
 </article>

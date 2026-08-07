@@ -1,11 +1,14 @@
 title: "Notas técnicas"
-description: "Notas, apuntes y explicaciones técnicas de Alberto Jorge Galindo Barboza."
+description: "Cuaderno técnico de Alberto Jorge Galindo Barboza: notas, explicaciones y recursos sobre epidemiología, virología, diagnóstico, muestreo y análisis."
 author: "Alberto Jorge Galindo Barboza"
 lang: "es-MX"
 url: "https://aljogaba.github.io"
 baseurl: "/notas-tecnicas"
 permalink: /:slug/
 timezone: America/Mexico_City
+
+profile_url: "https://aljogaba.github.io/"
+episuis_url: "https://episuis.com.mx/"
 
 plugins:
   - jekyll-feed

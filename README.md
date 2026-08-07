@@ -1,31 +1,28 @@
-# Notas técnicas — V2
+# Notas técnicas
 
-Sitio Jekyll ligero para GitHub Pages.
+Sitio Jekyll ligero publicado con GitHub Pages. El objetivo es mantener un archivo técnico neutral, enlazable tanto desde el perfil profesional como desde EPISUIS.
 
 ## Publicar una nota
 
 1. Copiar `_drafts/PLANTILLA.md`.
-2. Guardar la copia en `_posts/` con nombre `AAAA-MM-DD-slug.md`.
+2. Guardar la copia en `_posts/` como `AAAA-MM-DD-slug.md`.
 3. Completar el bloque YAML superior.
-4. Colocar la imagen principal en `assets/images/notas/` y actualizar `image:`.
-5. Escribir el texto en Markdown.
-6. `commit` + `push`.
+4. Colocar la imagen principal en `assets/images/notas/`.
+5. Escribir la nota siguiendo la estructura editorial de la plantilla.
+6. Hacer `commit` + `push` desde GitHub Desktop.
 
-No es necesario editar `index.html`, el menú lateral ni los filtros: Jekyll los construye a partir de los metadatos de cada nota.
+Jekyll genera automáticamente la portada, filtros, tarjetas, URLs y metadatos básicos. No es necesario editar `index.html` para publicar una nota.
 
-## Migración inicial
+## Convenciones editoriales
 
-Se recuperaron las tres entradas publicadas presentes en el WXR de WordPress del 7 de agosto de 2026.
-
-Para mantener el nuevo sitio neutral, las secciones tituladas `Aplicación en EPISUIS` no se muestran en las versiones migradas. El texto original continúa conservado en el archivo WXR de respaldo.
-
-Las imágenes utilizadas por las tres notas ya fueron recuperadas de `wp-content/uploads/` y copiadas a `assets/images/notas/`. Las notas ya no dependen del hosting de WordPress para mostrar sus imágenes.
+- Un H1 por página (lo genera el layout).
+- `##` para apartados principales y `###` para subsecciones.
+- Un único bloque `> **Idea central.** ...` por nota.
+- Figuras internas mediante `_includes/figure.html`.
+- Sin líneas `---` como separadores dentro del artículo.
+- Los enlaces a Perfil profesional y EPISUIS viven en navegación y cierre; el cuerpo de la nota se mantiene técnico y neutral.
 
 ## GitHub Pages
 
-La configuración provisional usa:
-
 - `url: https://aljogaba.github.io`
-- `baseurl: /notas`
-
-Si el repositorio termina llamándose de otra forma, cambiar únicamente `baseurl` en `_config.yml`.
+- `baseurl: /notas-tecnicas`

@@ -44,7 +44,7 @@ title:
         <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
         <p>{{ post.excerpt }}</p>
         <div class="note-card-footer">
-          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
+          <time datetime="{{ post.date | date_to_xmlschema }}">{% include date-es.html date=post.date short=true %}</time>
           <span>{{ minutes }} min</span>
         </div>
       </div>
