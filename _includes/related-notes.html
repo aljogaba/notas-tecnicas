@@ -1,0 +1,19 @@
+{% if site.posts.size > 1 %}
+<section class="related-notes" aria-labelledby="related-notes-title">
+  <p class="section-label">Continuar leyendo</p>
+  <h2 id="related-notes-title">También en Notas técnicas</h2>
+  <div class="related-notes-grid">
+    {% assign shown = 0 %}
+    {% for candidate in site.posts %}
+      {% if candidate.url != page.url and shown < 2 %}
+        <article class="related-note">
+          <p class="related-note-meta">{{ candidate.type }} · {{ candidate.topic }}</p>
+          <h3><a href="{{ candidate.url | relative_url }}">{{ candidate.title }}</a></h3>
+          <p>{{ candidate.excerpt }}</p>
+        </article>
+        {% assign shown = shown | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}

@@ -17,7 +17,7 @@ editorial_review: pending
 
 La secuenciación de ORF5 mediante Sanger es una herramienta ampliamente utilizada para caracterizar molecularmente al virus del síndrome reproductivo y respiratorio porcino —PRRSV—. Sin embargo, su interpretación requiere cuidado cuando una muestra o un pool puede contener más de una variante viral.
 
-> **Idea central.** La secuenciación Sanger es una herramienta sólida para caracterizar la variante dominante de una muestra. Sin embargo, una secuencia consenso no necesariamente refleja toda la diversidad viral existente, especialmente cuando se analizan pools o muestras con poblaciones mixtas.
+{% include idea-central.html text="La secuenciación Sanger es una herramienta sólida para caracterizar la variante dominante de una muestra. Sin embargo, una secuencia consenso no necesariamente refleja toda la diversidad viral existente, especialmente cuando se analizan pools o muestras con poblaciones mixtas." %}
 
 ## De la muestra al producto amplificado
 

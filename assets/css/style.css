@@ -518,30 +518,39 @@ button, input { font: inherit; }
   .post-body { font-size: 1.03rem; }
 }
 
-/* Editorial system — V3 */
+/* Editorial system — V4 */
 .content-column {
   min-width: 0;
 }
 
-/* The blockquote is reserved for the single "Idea central" of each note. */
-.post-body blockquote {
-  margin: 2.2em 0 2.35em;
-  padding: 22px 24px;
-  border-left: 4px solid var(--accent);
-  border-radius: 0 12px 12px 0;
-  background: var(--accent-soft);
-  color: #34423c;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: .98rem;
-  line-height: 1.62;
+/* Signature editorial element: one Idea central per note, without card styling. */
+.idea-central {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 24px;
+  margin: 3em 0 3.15em;
+  padding: 18px 0 20px;
+  border-top: 1px solid var(--accent);
+  border-bottom: 1px solid var(--line);
 }
 
-.post-body blockquote p {
-  margin: 0;
-}
-
-.post-body blockquote strong {
+.idea-central-label {
+  margin: 2px 0 0;
   color: var(--accent);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: .7rem;
+  font-weight: 750;
+  letter-spacing: .12em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.idea-central-text {
+  margin: 0;
+  color: #33403b;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.18rem;
+  line-height: 1.58;
 }
 
 .post-body h2 {
@@ -553,6 +562,7 @@ button, input { font: inherit; }
   font-size: 1.32rem;
 }
 
+/* Horizontal rules are not part of the normal editorial vocabulary. */
 .post-body hr {
   margin: 3em 0;
   border: 0;
@@ -579,8 +589,138 @@ button, input { font: inherit; }
   line-height: 1.5;
 }
 
+.zoomable-image {
+  cursor: zoom-in;
+}
+
+.zoomable-image:focus-visible {
+  outline: 3px solid rgba(40, 93, 75, .35);
+  outline-offset: 4px;
+}
+
+.section-label {
+  margin: 0 0 5px;
+  color: var(--accent);
+  font-size: .68rem;
+  font-weight: 750;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.recommended-citation,
+.related-notes,
+.post-tags-section {
+  margin-top: 34px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.recommended-citation-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.recommended-citation h2,
+.related-notes h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.55rem;
+  font-weight: 500;
+  letter-spacing: -.02em;
+  line-height: 1.15;
+}
+
+.citation-text {
+  margin: 18px 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: .98rem;
+  line-height: 1.65;
+}
+
+.citation-note {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: .75rem;
+  line-height: 1.5;
+}
+
+.citation-copy {
+  flex: 0 0 auto;
+  padding: 7px 11px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: .76rem;
+}
+
+.citation-copy:hover {
+  border-color: var(--accent);
+}
+
+.citation-copy:focus-visible {
+  outline: 3px solid rgba(40, 93, 75, .2);
+  outline-offset: 2px;
+}
+
+.citation-status {
+  display: block;
+  min-height: 1.2em;
+  margin-top: 5px;
+  color: var(--accent);
+  font-size: .72rem;
+}
+
+.related-notes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 20px;
+}
+
+.related-note {
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.related-note-meta {
+  margin: 0;
+  color: var(--accent);
+  font-size: .66rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.related-note h3 {
+  margin: 7px 0 8px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.16rem;
+  line-height: 1.24;
+}
+
+.related-note h3 a {
+  text-decoration: none;
+}
+
+.related-note h3 a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.related-note > p:last-child {
+  margin: 0;
+  color: var(--muted);
+  font-size: .8rem;
+  line-height: 1.5;
+}
+
 .post-editorial-meta {
-  margin-top: 24px;
+  margin-top: 26px;
   padding-top: 18px;
   border-top: 1px solid var(--line);
   color: var(--muted);
@@ -623,15 +763,6 @@ button, input { font: inherit; }
   gap: 28px;
 }
 
-.site-footer-kicker {
-  margin: 0 0 4px;
-  color: var(--accent);
-  font-size: .68rem;
-  font-weight: 700;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-}
-
 .site-footer-title {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
@@ -671,6 +802,98 @@ button, input { font: inherit; }
   line-height: 1.55;
 }
 
+/* Full-screen teaching view for figures and hero images. */
+.image-lightbox {
+  width: min(96vw, 1700px);
+  height: min(94vh, 1100px);
+  max-width: none;
+  max-height: none;
+  padding: 0;
+  border: 0;
+  border-radius: 12px;
+  background: #101412;
+  color: #f7f7f4;
+  overflow: hidden;
+}
+
+.image-lightbox::backdrop {
+  background: rgba(8, 11, 10, .88);
+}
+
+.image-lightbox-toolbar {
+  display: flex;
+  min-height: 54px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, .13);
+}
+
+.image-lightbox-counter {
+  color: rgba(255, 255, 255, .7);
+  font-size: .78rem;
+}
+
+.image-lightbox-close,
+.image-lightbox-nav {
+  border: 0;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.image-lightbox-close {
+  width: 38px;
+  height: 38px;
+  font-size: 1.85rem;
+  line-height: 1;
+}
+
+.image-lightbox-stage {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) 56px;
+  height: calc(100% - 54px);
+  align-items: center;
+}
+
+.image-lightbox-nav {
+  align-self: stretch;
+  font-size: 2.5rem;
+  opacity: .75;
+}
+
+.image-lightbox-nav:hover {
+  background: rgba(255, 255, 255, .06);
+  opacity: 1;
+}
+
+.image-lightbox-figure {
+  display: flex;
+  min-width: 0;
+  height: 100%;
+  margin: 0;
+  padding: 18px 12px 16px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-lightbox-figure img {
+  max-width: 100%;
+  max-height: calc(100% - 54px);
+  object-fit: contain;
+}
+
+.image-lightbox-figure figcaption {
+  max-width: 980px;
+  margin-top: 12px;
+  color: rgba(255, 255, 255, .76);
+  font-size: .78rem;
+  line-height: 1.45;
+  text-align: center;
+}
+
 @media (max-width: 760px) {
   .site-footer {
     margin: 0 20px;
@@ -686,7 +909,44 @@ button, input { font: inherit; }
     justify-content: flex-start;
   }
 
-  .post-body blockquote {
-    padding: 18px 19px;
+  .idea-central {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin: 2.5em 0;
+    padding: 15px 0 17px;
+  }
+
+  .idea-central-text {
+    font-size: 1.08rem;
+  }
+
+  .recommended-citation-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .related-notes-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .image-lightbox {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .image-lightbox-stage {
+    grid-template-columns: 38px minmax(0, 1fr) 38px;
+  }
+
+  .image-lightbox-nav {
+    font-size: 2rem;
+  }
+
+  .image-lightbox-figure {
+    padding-left: 4px;
+    padding-right: 4px;
   }
 }

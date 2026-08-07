@@ -21,7 +21,7 @@ Por ejemplo, detectar una secuencia relacionada con una vacuna durante las prime
 
 La profundidad del análisis debe definirse de acuerdo con la pregunta sanitaria. Para ello, puede plantearse un abordaje escalonado.
 
-> **Idea central.** Para comprender la dinámica molecular de PRRSV no basta con identificar una secuencia aislada en cada momento. Es necesario ampliar el muestreo, conservar la identidad de los animales y elegir una estrategia diagnóstica acorde con el nivel de diversidad que se desea estudiar.
+{% include idea-central.html text="Para comprender la dinámica molecular de PRRSV no basta con identificar una secuencia aislada en cada momento. Es necesario ampliar el muestreo, conservar la identidad de los animales y elegir una estrategia diagnóstica acorde con el nivel de diversidad que se desea estudiar." %}
 
 ## Nivel básico: seguimiento longitudinal
 

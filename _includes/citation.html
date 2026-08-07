@@ -1,0 +1,18 @@
+{% assign citation_year = page.date | date: "%Y" %}
+{% assign citation_url = page.url | absolute_url %}
+<section class="recommended-citation" aria-labelledby="citation-title">
+  <div class="recommended-citation-heading">
+    <div>
+      <p class="section-label">Referencia</p>
+      <h2 id="citation-title">Cómo citar esta nota</h2>
+    </div>
+    <button class="citation-copy" type="button" data-copy-citation aria-describedby="citation-status">Copiar cita</button>
+  </div>
+  {% if page.citation_override %}
+    <p class="citation-text" id="recommended-citation">{{ page.citation_override }}</p>
+  {% else %}
+    <p class="citation-text" id="recommended-citation">{{ site.author_citation }} ({{ citation_year }}). {{ page.title }}. <em>{{ site.title }}</em>. {{ citation_url }}</p>
+  {% endif %}
+  <p class="citation-note">Cita sugerida para identificar esta nota técnica; no implica que el contenido sea una publicación científica revisada por pares.</p>
+  <span class="citation-status" id="citation-status" aria-live="polite"></span>
+</section>

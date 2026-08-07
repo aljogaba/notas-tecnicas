@@ -23,7 +23,7 @@ layout: default
 
   {% if page.image %}
     <figure class="post-hero">
-      <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | escape }}">
+      <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | escape }}" data-lightbox-image>
       {% if page.image_caption %}<figcaption>{{ page.image_caption }}</figcaption>{% endif %}
     </figure>
   {% endif %}
@@ -33,12 +33,17 @@ layout: default
   </div>
 
   <footer class="post-footer">
+    {% include citation.html %}
+    {% include related-notes.html %}
+
     {% if page.tags %}
-      <p class="post-tags-label">Temas relacionados</p>
-      <div class="post-tags">
-        {% for tag in page.tags %}
-          <span>{{ tag }}</span>
-        {% endfor %}
+      <div class="post-tags-section">
+        <p class="post-tags-label">Temas relacionados</p>
+        <div class="post-tags">
+          {% for tag in page.tags %}
+            <span>{{ tag }}</span>
+          {% endfor %}
+        </div>
       </div>
     {% endif %}
 
@@ -46,11 +51,11 @@ layout: default
       {% if page.reviewed_on %}
         <p><strong>Revisión editorial:</strong> {% include date-es.html date=page.reviewed_on %}</p>
       {% endif %}
-      <p>Esta es una nota técnica de trabajo y divulgación. Cuando corresponde, las fuentes se indican al final y los límites de interpretación se expresan en el propio texto.</p>
+      <p>Nota técnica de trabajo y divulgación. Cuando corresponde, las fuentes se indican al final y los límites de interpretación se expresan en el propio texto.</p>
     </div>
 
     <div class="post-exit-links">
-      <a href="{{ '/' | relative_url }}">Volver al archivo</a>
+      <a href="{{ '/' | relative_url }}">Volver a Notas técnicas</a>
       <a href="{{ site.profile_url }}">Perfil profesional</a>
       <a href="{{ site.episuis_url }}">EPISUIS</a>
     </div>

@@ -20,7 +20,7 @@ En producción porcina, identificar la presencia de un agente infeccioso es una 
 
 El diagnóstico permite detectar agentes, estimar exposición o confirmar circulación. La interpretación sanitaria, en cambio, integra esos resultados con información clínica, productiva, poblacional y operativa para comprender qué está ocurriendo realmente en el sistema.
 
-> **Idea central.** Un resultado diagnóstico aislado puede indicar presencia, exposición o circulación de un agente. Sin embargo, su significado sanitario depende del contexto productivo, clínico, epidemiológico y operativo en el que se interpreta.
+{% include idea-central.html text="Un resultado diagnóstico aislado puede indicar presencia, exposición o circulación de un agente. Sin embargo, su significado sanitario depende del contexto productivo, clínico, epidemiológico y operativo en el que se interpreta." %}
 
 ## Qué aporta el diagnóstico
 

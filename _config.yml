@@ -1,6 +1,7 @@
 title: "Notas técnicas"
-description: "Cuaderno técnico de Alberto Jorge Galindo Barboza: notas, explicaciones y recursos sobre epidemiología, virología, diagnóstico, muestreo y análisis."
+description: "Archivo técnico de Alberto Jorge Galindo Barboza con notas y explicaciones sobre epidemiología, virología, diagnóstico, muestreo y análisis."
 author: "Alberto Jorge Galindo Barboza"
+author_citation: "Galindo Barboza, A. J."
 lang: "es-MX"
 url: "https://aljogaba.github.io"
 baseurl: "/notas-tecnicas"
@@ -21,6 +22,11 @@ defaults:
     values:
       layout: post
       type: "Nota técnica"
+      robots: "index,follow,max-image-preview:large"
+  - scope:
+      path: ""
+    values:
+      robots: "index,follow,max-image-preview:large"
 
 exclude:
   - README.md
