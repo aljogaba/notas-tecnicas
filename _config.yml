@@ -3,7 +3,7 @@ description: "Notas, apuntes y explicaciones técnicas de Alberto Jorge Galindo 
 author: "Alberto Jorge Galindo Barboza"
 lang: "es-MX"
 url: "https://aljogaba.github.io"
-baseurl: "/notas"
+baseurl: "/notas-tecnicas"
 permalink: /:slug/
 timezone: America/Mexico_City
 
