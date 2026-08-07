@@ -45,7 +45,7 @@ PROPÓSITO
 - Distinguir con claridad evidencia, interpretación, implicación y límite.
 
 VOZ
-1. Abrir con la idea útil: en 1–2 párrafos debe quedar claro qué pregunta aborda la nota y por qué importa.
+1. Abrir con la idea útil: en 1–2 párrafos debe quedar claro qué pregunta aborda la nota y por qué importa. El cuerpo inicia con la misma tipografía y tamaño que el resto del texto; la jerarquía de entrada ya la resuelven el título y el `excerpt`.
 2. Usar voz activa y frases directas. Mantener términos técnicos cuando aporten precisión y explicarlos cuando puedan frenar al lector.
 3. Evitar absolutos no sustentados: "puede indicar", "es compatible con", "no demuestra por sí solo", "requiere contexto".
 4. No inflar conclusiones. Si un dato admite varias explicaciones, decirlo cerca de la afirmación correspondiente.
@@ -62,7 +62,7 @@ JERARQUÍA
 VOCABULARIO VISUAL — CADA RECURSO TIENE UNA SOLA FUNCIÓN
 - `{% include idea-central.html text="..." %}` = una única síntesis editorial por nota.
   No es una tarjeta ni un aviso; funciona como interludio tipográfico propio del sitio.
-- `{% include figure.html ... %}` = toda figura interna. Las imágenes se pueden abrir a pantalla completa automáticamente.
+- `{% include figure.html ... %}` = toda figura interna. Incluye siempre `alt` y, salvo que no aporte información, un `caption` explicativo. Al abrir la figura, el visor muestra la imagen completa (sin recorte, aunque deba escalarse) y conserva el pie de figura.
 - `**Pregunta guía:** ...` = frase normal dentro del flujo; no crear un recuadro adicional.
 - `>` = reservarlo para una cita textual real, no para destacar ideas propias.
 - Referencias, cita recomendada, notas relacionadas y cierre se generan/estilizan de forma homogénea por el sitio.
@@ -81,7 +81,7 @@ ANTES DE PUBLICAR
 - ¿Los H2/H3 reflejan la jerarquía real?
 - ¿Se distingue dato de interpretación?
 - ¿Los límites aparecen donde hacen falta?
-- ¿Todas las figuras tienen alt y, cuando corresponde, pie explicativo?
+- ¿Todas las figuras tienen `alt` y un pie explicativo útil? ¿El pie sigue siendo comprensible cuando la figura se abre a pantalla completa?
 - ¿Las referencias sostienen las afirmaciones que dependen de fuentes externas?
 - ¿El título y el excerpt describen exactamente el contenido?
 - Cambiar `editorial_review` a `reviewed` y agregar `reviewed_on` al finalizar.
@@ -121,7 +121,7 @@ Usa un `###` únicamente cuando este contenido dependa de la sección anterior. 
   caption="Figura 1. Explica qué representa la imagen y qué conviene observar; no repitas solamente el título."
 %}
 
-La figura se mostrará dentro del artículo y podrá abrirse a pantalla completa con clic, Enter o barra espaciadora. Esto permite usar la misma nota como apoyo visual durante una clase o presentación.
+La figura se mostrará dentro del artículo y podrá abrirse a pantalla completa con clic, Enter o barra espaciadora. En el visor se conserva completa, sin recortarse, aunque deba reducir su escala para caber en la pantalla; el pie de figura se muestra debajo. Esto permite usar la misma nota como apoyo visual durante una clase o presentación.
 
 ## Qué conviene no concluir
 
