@@ -1,0 +1,25 @@
+title: "Notas técnicas"
+description: "Notas, apuntes y explicaciones técnicas de Alberto Jorge Galindo Barboza."
+author: "Alberto Jorge Galindo Barboza"
+lang: "es-MX"
+url: "https://aljogaba.github.io"
+baseurl: "/notas"
+permalink: /:slug/
+timezone: America/Mexico_City
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      type: "Nota técnica"
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

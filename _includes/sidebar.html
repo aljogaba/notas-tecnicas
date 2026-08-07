@@ -1,0 +1,55 @@
+<aside class="sidebar" id="site-sidebar">
+  <div class="sidebar-inner">
+    <a class="site-mark" href="{{ '/' | relative_url }}" aria-label="Inicio de Notas técnicas">
+      <span class="site-kicker">Archivo personal</span>
+      <strong>Notas técnicas</strong>
+      <span>Alberto Jorge Galindo Barboza</span>
+    </a>
+
+    <label class="search-label" for="note-search">Buscar en las notas</label>
+    <input id="note-search" class="note-search" type="search" placeholder="PRRSV, diagnóstico, Sanger…" autocomplete="off">
+
+    <nav class="filter-nav" aria-label="Filtros de notas">
+      <section class="filter-group">
+        <h2>Temas</h2>
+        <button class="filter-button is-active" type="button" data-filter-group="topic" data-filter-value="all">Todas</button>
+        {% assign topics = site.posts | map: "topic" | uniq | sort %}
+        {% for topic in topics %}
+          <button class="filter-button" type="button" data-filter-group="topic" data-filter-value="{{ topic | slugify }}">{{ topic }}</button>
+        {% endfor %}
+      </section>
+
+      <section class="filter-group">
+        <h2>Tipo</h2>
+        <button class="filter-button is-active" type="button" data-filter-group="type" data-filter-value="all">Todos</button>
+        {% assign types = site.posts | map: "type" | uniq | sort %}
+        {% for type in types %}
+          <button class="filter-button" type="button" data-filter-group="type" data-filter-value="{{ type | slugify }}">{{ type }}</button>
+        {% endfor %}
+      </section>
+
+      <section class="filter-group">
+        <h2>Año</h2>
+        <button class="filter-button is-active" type="button" data-filter-group="year" data-filter-value="all">Todos</button>
+        {% assign years = "" | split: "" %}
+        {% for post in site.posts %}
+          {% assign y = post.date | date: "%Y" %}
+          {% unless years contains y %}
+            {% assign years = years | push: y %}
+          {% endunless %}
+        {% endfor %}
+        {% assign years = years | sort | reverse %}
+        {% for year in years %}
+          <button class="filter-button" type="button" data-filter-group="year" data-filter-value="{{ year }}">{{ year }}</button>
+        {% endfor %}
+      </section>
+    </nav>
+
+    <div class="sidebar-links">
+      <a href="https://aljogaba.github.io/">Perfil profesional</a>
+      <a href="https://episuis.com.mx/">EPISUIS</a>
+    </div>
+
+    <p class="sidebar-note">Notas de trabajo y divulgación técnica. No sustituyen publicaciones científicas revisadas por pares ni recomendaciones profesionales individualizadas.</p>
+  </div>
+</aside>

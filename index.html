@@ -1,0 +1,55 @@
+---
+layout: default
+title:
+---
+
+<header class="archive-header">
+  <p class="eyebrow">Cuaderno técnico</p>
+  <h1>Ideas técnicas, explicadas con contexto.</h1>
+  <p class="archive-intro">
+    Un archivo personal de notas sobre epidemiología, virología, diagnóstico, muestreo y análisis.
+    Algunas desarrollan conceptos; otras documentan razonamientos, procedimientos o preguntas de trabajo.
+  </p>
+</header>
+
+<section class="archive-toolbar" aria-live="polite">
+  <p><strong id="visible-count">{{ site.posts | size }}</strong> notas</p>
+  <button id="clear-filters" class="clear-filters" type="button">Limpiar filtros</button>
+</section>
+
+<section class="notes-grid" id="notes-grid">
+  {% for post in site.posts %}
+    {% assign words = post.content | number_of_words %}
+    {% assign minutes = words | divided_by: 200 | plus: 1 %}
+    <article
+      class="note-card"
+      data-note
+      data-topic="{{ post.topic | slugify }}"
+      data-type="{{ post.type | slugify }}"
+      data-year="{{ post.date | date: '%Y' }}"
+      data-search="{{ post.title | append: ' ' | append: post.excerpt | append: ' ' | append: post.tags | downcase | escape }}"
+    >
+      <a class="note-card-image" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true">
+        {% if post.image %}
+          <img src="{{ post.image | relative_url }}" alt="" loading="lazy">
+        {% else %}
+          <span class="image-placeholder" aria-hidden="true">NT</span>
+        {% endif %}
+      </a>
+      <div class="note-card-body">
+        <div class="note-meta">
+          <span>{{ post.type }}</span>
+          <span>{{ post.topic }}</span>
+        </div>
+        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+        <p>{{ post.excerpt }}</p>
+        <div class="note-card-footer">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
+          <span>{{ minutes }} min</span>
+        </div>
+      </div>
+    </article>
+  {% endfor %}
+</section>
+
+<p class="no-results" id="no-results" hidden>No encontré notas con esos filtros.</p>
