@@ -2,6 +2,12 @@
 
 Sitio Jekyll ligero publicado con GitHub Pages. **Notas técnicas** es el nombre único del sitio y **Archivo técnico** su descriptor editorial. El contenido puede enlazarse tanto desde el perfil profesional como desde EPISUIS sin convertirse en una marca independiente.
 
+## Alcance del repositorio
+
+Este repositorio gestiona las piezas que se publican en el sitio **Notas técnicas** y aquellas que ya han entrado formalmente a su flujo editorial. No funciona como índice maestro de todos los temas, ideas o numeraciones internas de notas que puedan existir fuera del sitio.
+
+La existencia de un tema, borrador conceptual o número interno de nota no implica que deba representarse aquí. Un contenido se incorpora al repositorio cuando pasa al flujo editorial del sitio: preparación en `_drafts/`, revisión y, finalmente, publicación en `_posts/`.
+
 ## Publicar una nota
 
 1. Copiar `_drafts/PLANTILLA.md`.
